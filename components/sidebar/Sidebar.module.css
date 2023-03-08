@@ -1,0 +1,11 @@
+.menu{
+  background: transparent !important;
+
+}
+
+.image_body{
+  text-align: center;
+  padding: 24px;
+  border-radius: 16px;
+  background: #1F1D2B;
+}
