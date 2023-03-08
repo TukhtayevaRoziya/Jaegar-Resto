@@ -1,28 +1,85 @@
-body{
+body {
   margin: 0;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider{
-  background: #1F1D2B;
+:where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider {
+  background: #1f1d2b;
 
   /* border-top-right-radius: 16px;
   border-bottom-right-radius: 16px; */
 }
 
-.ant-layout-sider-trigger{
+.ant-layout-sider-trigger {
   display: none;
 }
 
-.ant-layout-sider{
+.ant-layout-sider {
   width: 104px !important;
   min-width: 104px !important;
   max-width: 104px !important;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical .ant-menu-item{
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical .ant-menu-item {
   margin: 0 0 0 auto;
+  color: #ea7c69;
+  transition: 0.1s all linear;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-menu-light .ant-menu-item-selected {
-  color: #EA7C69;
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical
+  .ant-menu-item
+  .ant-menu-item-icon {
+  transition: 0.1s all linear;
+  padding: 15px;
+  margin: 10px 0 10px -15px;
+  border-radius: 8px;
 }
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-light
+  .ant-menu-item-selected {
+  color: #fff;
+  background: #252836;
+}
+
+:where(
+    .css-dev-only-do-not-override-1me4733
+  ).ant-menu-light.ant-menu-root.ant-menu-vertical {
+  border-inline-end: none;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu .ant-menu-item {
+  border-radius: 12px 0px 0px 12px;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-light
+  .ant-menu-item-selected
+  .ant-menu-item-icon {
+  padding: 15px;
+  margin: 10px 0 10px -15px;
+  background: #ea7c69;
+  box-shadow: 0px 8px 24px rgb(234 124 105 / 32%);
+  border-radius: 8px;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical
+  > .ant-menu-item {
+  height: auto;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-light
+  .ant-menu-item:hover:not(.ant-menu-item-selected):not(
+    .ant-menu-submenu-selected
+  ) {
+  color: #ea7c69;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-light:not(
+    .ant-menu-horizontal
+  )
+  .ant-menu-item:not(.ant-menu-item-selected):active {
+  background: #252836;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-light
+  .ant-menu-item-selected ~ .Sidebar_image_body__Yc3Rv{
+border: 2px solid red;
+  }
