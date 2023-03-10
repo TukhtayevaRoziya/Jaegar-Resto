@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: "Barlow", sans-serif;
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider {
@@ -80,6 +81,40 @@ body {
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-menu-light
-  .ant-menu-item-selected ~ .Sidebar_image_body__Yc3Rv{
-border: 2px solid red;
-  }
+  .ant-menu-item-selected
+  ~ .Sidebar_image_body__Yc3Rv {
+  border: 2px solid red;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-tabs
+  .ant-tabs-tab.ant-tabs-tab-active
+  .ant-tabs-tab-btn {
+  color: #ea7c69;
+}
+:where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab,
+:where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab:hover {
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+}
+.tabs {
+  margin-top: 17px;
+  width: 100%;
+}
+.redBorder .ant-tabs-ink-bar {
+  background-color: #e94747;
+}
+.greenBorder .ant-tabs-ink-bar {
+  background-color: #24ad52;
+}
+.blueGreyBorder .ant-tabs-ink-bar {
+  background-color: #5b708b;
+}
+
+.ant-tabs-nav-list{
+  border-bottom: 1px solid #393C49;
+}

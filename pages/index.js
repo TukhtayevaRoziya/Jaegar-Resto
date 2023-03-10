@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import {RiSearchLine} from 'react-icons/ri'
+
 import Sidebar from '@/components/sidebar/Sidebar'
+
+import styles from '@/styles/Home.module.css'
+import MyTabs from '@/components/home/Tabs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +20,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Sidebar />
+        <Sidebar>
+          <div className={styles.contain}>
+            <div className={styles.contain_main}>
+              <header>
+                <div className={styles.user_info}>
+                  <h1>Jaegar Resto</h1>
+                  <p>Tuesday, 2 Feb 2021</p>
+                </div>
+                <div className={styles.search}>
+                  <RiSearchLine/>
+                <input placeholder='Search for food, coffe, etc..'/>
+                </div>
+              </header>
+              <main>
+                <MyTabs/>
+              </main>
+            </div>
+            <div className={styles.contain_n_right}>
+dsfsf
+            </div>
+          </div>
+        </Sidebar>
       </main>
     </>
   )
