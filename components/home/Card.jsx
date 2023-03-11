@@ -1,32 +1,52 @@
-import React from 'react'
-import i1 from '../../assets/card_i1.png'
-import Image from 'next/image';
+import React, { useEffect, useState } from "react";
+import { Select } from "antd";
+import Image from "next/image";
 
-const Card = ({data=[
-  {id:0, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
- { id:1, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-  {id:2, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-  {id:3, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-  {id:4, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-  {id:5, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-  {id:6, image: i1, name:'Spicy seasoned seafood noodles', price:'2.29', available:'20 Bowls'},
-]}) => {
-  if(!data){
-    return <>Loading...</>
+import styles from "./Home.module.css";
+
+const Card = ({data1, data2, data3}) => {
+  const [data, setData] = useState(data1);
+
+  if (!data1 || !data2 || !data3) {
+    return <>Loading...</>;
   }
-  const dataMap = data.map(d=>(
-    <div key={d.id}>
-      <Image src={d.image} alt='' />
+
+  const dataMap = data.map((d) => (
+    <div key={d.id} className={styles.card_box}>
+      <Image src={d.image} alt="" />
       <h1>{d.name}</h1>
-      <h1>${d.price}</h1>
-      <h1>{d.available} available</h1>
+      <h2>${d.price}</h2>
+      <h3>{d.available} available</h3>
     </div>
-  ))
+  ));
+  const handleChange = (value) => {
+    const convertNum = Number(value);
+    if (convertNum === 1) {
+      setData(data2);
+    } else if (convertNum === 2) {
+      setData(data3);
+    } else {
+      setData(data1);
+    }
+  };
   return (
     <div>
-      {dataMap}
+      <div className={styles.card_header}>
+        <h1>Choose Dishes</h1>
+        <Select
+          defaultValue="lucy"
+          style={{ width: 120 }}
+          onChange={handleChange}
+          options={[
+            { value: "0", label: "Dine In" },
+            { value: "1", label: "To Go" },
+            { value: "2", label: "Delivery" },
+          ]}
+        />
+      </div>
+      <div className={styles.card_block}>{dataMap}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

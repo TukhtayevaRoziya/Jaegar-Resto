@@ -118,3 +118,22 @@ body {
 .ant-tabs-nav-list{
   border-bottom: 1px solid #393C49;
 }
+
+.ant-select-selector{
+  background-color: transparent !important;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-select,
+.ant-select-selector,
+.ant-select,
+.ant-select-arrow{
+  color: #fff !important;
+
+}
+
+
+:where(.css-dev-only-do-not-override-1me4733).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
+  background: #1F1D2B;
+border: 1px solid #393C49;
+border-radius: 8px;
+}

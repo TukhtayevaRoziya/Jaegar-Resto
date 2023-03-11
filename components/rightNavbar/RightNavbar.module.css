@@ -1,0 +1,169 @@
+.title {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+
+  color: #ffffff;
+}
+
+.body button {
+  background: #1f1d2b;
+  border: 1px solid #393c49;
+  border-radius: 8px;
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  color: #ea7c69;
+  padding: 7px 12px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.table_head {
+  border-bottom: 1px solid #393c49;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table_head h1,
+.table_head h2,
+.table_head h3 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+.table_head h1 {
+  width: 60%;
+}
+
+.main {
+  margin-top: 1rem;
+}
+
+.main_info {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+
+.main_info img {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+}
+
+.main_info div {
+  margin-left: 10px;
+}
+
+.main_info div h1,
+.main_info div p {
+  margin: 0;
+}
+
+.main_info div h1 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.main_info div p {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+
+  color: #abbbc2;
+}
+
+.count {
+  background: #2d303e;
+  width: 50px;
+  border: 1px solid #393c49;
+  border-radius: 8px;
+  outline: none;
+  color: #fff;
+  padding: 14px 20px;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.block span {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  text-align: right;
+  color: #ffffff;
+  align-items: center;
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.extra input {
+  width: 80%;
+  margin-top: 15px;
+  background: #2d303e;
+  /* Base / Dark Line */
+
+  border: 1px solid #393c49;
+  border-radius: 8px;
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #e0e6e9;
+  padding: 14px;
+  outline: none;
+}
+
+.delete {
+  border: 1px solid #ea7c69;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete svg{
+  font-size: 18px;
+  color: #ea7c69;
+}
+
+.box{
+  margin-top: 1rem
+}
+
+.payment{
+  border-top: 1px solid #393C49;
+  position: fixed;
+  bottom: 0;
+  background: #1f1d2b;
+  width: 100%;
+}

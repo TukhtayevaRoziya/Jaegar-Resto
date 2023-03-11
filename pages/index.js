@@ -1,14 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import {RiSearchLine} from 'react-icons/ri'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import { RiSearchLine } from "react-icons/ri";
 
-import Sidebar from '@/components/sidebar/Sidebar'
+import Sidebar from "@/components/sidebar/Sidebar";
 
-import styles from '@/styles/Home.module.css'
-import MyTabs from '@/components/home/Tabs'
+import styles from "@/styles/Home.module.css";
+import MyTabs from "@/components/home/Tabs";
+import RightNavbar from "@/components/rightNavbar/RightNavbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -29,20 +30,20 @@ export default function Home() {
                   <p>Tuesday, 2 Feb 2021</p>
                 </div>
                 <div className={styles.search}>
-                  <RiSearchLine/>
-                <input placeholder='Search for food, coffe, etc..'/>
+                  <RiSearchLine />
+                  <input placeholder="Search for food, coffe, etc.." />
                 </div>
               </header>
               <main>
-                <MyTabs/>
+                <MyTabs />
               </main>
             </div>
             <div className={styles.contain_n_right}>
-dsfsf
+              <RightNavbar/>
             </div>
           </div>
         </Sidebar>
       </main>
     </>
-  )
+  );
 }

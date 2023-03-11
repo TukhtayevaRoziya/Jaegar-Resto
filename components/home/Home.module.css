@@ -1,3 +1,96 @@
-.body{
+.body {
   margin-top: 24px;
+}
+
+/* -------Car------- */
+.card_header,
+.card_block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_header {
+  align-items: center;
+}
+
+.card_header h1 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+.card_block {
+  flex-wrap: wrap;
+}
+
+.card_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 32%;
+
+  background: #1f1d2b;
+  border-radius: 16px;
+  margin-top: 13%;
+  padding-bottom: 24px;
+}
+
+.card_box img {
+  margin-top: -30%;
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+  filter: revert;
+
+}
+
+.card_box h1,
+.card_box h2,
+.card_box h3 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  text-align: center;
+}
+
+.card_box h1 {
+  width: 70%;
+  font-size: 17px;
+  line-height: 130%;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+
+.card_box h2 {
+  color: #fff;
+  margin: 0.5rem;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.card_box h3 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #abbbc2;
+  margin:0
+}
+
+.card_header select{
+  background: transparent;
+  font-family: 'Barlow', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: #FFFFFF;
+}
+
+.card_header option:hover{
+  background-color: red;
 }
