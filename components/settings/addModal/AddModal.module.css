@@ -1,0 +1,51 @@
+.add_modal {
+  width: 35vw;
+  height: 70vh;
+  background-color: #1f1d2b;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 222;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+.add_modal input {
+  background-color: #393C49;
+  border: none;
+  color: #fff;
+  width: 70%;
+  height: 50px;
+  border-radius: 8px;
+  padding-left: 15px;
+}
+.add_modal input::placeholder {
+  color: #abbbc2c7;
+}
+.add_modal input:focus {
+  outline: none;
+}
+.backdrop_add {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.56);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.add_modal_btns {
+  position: absolute;
+  bottom: 20px;
+}
+.add_modal_btns button {
+  padding: 10px 30px;
+  background-color: transparent;
+  border: 1px solid #EA7C69;
+  border-radius: 8px;
+  color: #EA7C69;
+  transition: all 0.3s ease;
+}
+.add_modal_btns button:hover {
+  background: #EA7C69;
+  box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+  color: #fff;
+}

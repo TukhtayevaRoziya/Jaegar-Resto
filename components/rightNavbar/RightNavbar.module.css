@@ -167,3 +167,8 @@
   background: #1f1d2b;
   width: 100%;
 }
+
+.payment div{
+  display: flex;
+  justify-content: space-between;
+}
