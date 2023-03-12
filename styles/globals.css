@@ -95,7 +95,9 @@ li.ant-menu-item {
 
 :where(.css-dev-only-do-not-override-1me4733).ant-tabs
   .ant-tabs-tab.ant-tabs-tab-active
-  .ant-tabs-tab-btn {
+  .ant-tabs-tab-btn,
+  :where(.css-1me4733).ant-menu-light .ant-menu-item:hover:not(.ant-menu-item-selected):not(.ant-menu-submenu-selected),
+  :where(.css-1me4733).ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   color: #ea7c69;
 }
 :where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab,
