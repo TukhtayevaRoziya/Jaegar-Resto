@@ -1,13 +1,56 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import {AiOutlineDelete} from 'react-icons/ai'
-import i1 from '../../assets/card_i2.png'
-import  styles from './RightNavbar.module.css'
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { AiOutlineDelete } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+
+import i1 from "../../assets/card_i2.png";
+import styles from "./RightNavbar.module.css";
+import { DELETE_ORDER, GET_ORDER } from "../redux/actions/types";
+import {getAction} from '../redux/actions/readAction'
+import { deleteAction } from "../redux/actions/deleteAction";
 
 const RightNavbar = () => {
-  const [data, setData] = useState([
+  const { data } = useSelector((state) => state.productReducer);
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(getAction('/', GET_ORDER))
+  }, [dispatch]);
+  if (!data) {
+    return <>No Order...</>;
+  }
+  var dataMap = data.map((d) => {
+    let totalPrice = Number(d.price) * d.count;
+    totalPrice = Math.round(100 * totalPrice) / 100;
+    let count = d.count;
 
-  ])
+    const onClick = ()=>{
+      dispatch(deleteAction('/', DELETE_ORDER, d.id))
+      dispatch(getAction('/', GET_ORDER))
+    }
+
+    return (
+      <div className={styles.box} key={d.id}>
+        <div className={styles.block}>
+          <div className={styles.main_info}>
+            <Image alt="" src={d.image} />
+            <div>
+              <h1>{d.name}</h1>
+              <p>$ {d.price} </p>
+            </div>
+          </div>
+          <input className={styles.count} value={count} onChange={(e)=> count = e.target.value}/>
+          <span>$ {totalPrice}</span>
+        </div>
+        <div className={styles.extra}>
+          <input placeholder="Order Note..." />
+          <div className={styles.delete} onClick={onClick}>
+            <AiOutlineDelete />
+          </div>
+        </div>
+      </div>
+    );
+  });
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>Orders #34562</h1>
@@ -17,12 +60,13 @@ const RightNavbar = () => {
         <button>Delivery</button>
       </div>
       <div className={styles.table_head}>
-          <h1>Item</h1>
-          <h2>Qty</h2>
-          <h3>Price</h3>
+        <h1>Item</h1>
+        <h2>Qty</h2>
+        <h3>Price</h3>
       </div>
       <main className={styles.main}>
-        <div className={styles.box}>
+        {dataMap}
+        {/* <div className={styles.box}>
           
         <div className={styles.block}>
           <div className={styles.main_info}>
@@ -81,7 +125,7 @@ const RightNavbar = () => {
             <AiOutlineDelete />
           </div>
         </div>
-        </div>
+        </div> */}
         <div className={styles.payment}>
           <div>
             <h1>Discount</h1>
@@ -94,7 +138,7 @@ const RightNavbar = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default RightNavbar
+export default RightNavbar;
