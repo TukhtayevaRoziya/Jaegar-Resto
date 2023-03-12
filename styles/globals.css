@@ -30,7 +30,8 @@ li.ant-menu-item {
 
 :where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical
   .ant-menu-item
-  .ant-menu-item-icon {
+  .ant-menu-item-icon,
+  :where(.css-1me4733).ant-menu-inline-collapsed >.ant-menu-item .ant-menu-item-icon {
   transition: 0.1s all linear;
   padding: 15px;
   margin: 10px 0 10px -15px;
@@ -98,7 +99,9 @@ li.ant-menu-item {
   color: #ea7c69;
 }
 :where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab,
-:where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab:hover {
+:where(.css-1me4733).ant-tabs .ant-tabs-tab,
+:where(.css-dev-only-do-not-override-1me4733).ant-tabs .ant-tabs-tab:hover,
+:where(.css-1me4733).ant-tabs .ant-tabs-tab:hover {
   color: #fff;
   font-family: "Barlow", sans-serif;
 
