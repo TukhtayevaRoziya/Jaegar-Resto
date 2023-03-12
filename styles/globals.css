@@ -3,7 +3,8 @@ body {
   font-family: "Barlow", sans-serif;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider {
+:where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider,
+:where(.css-1me4733).ant-layout .ant-layout-sider {
   background: #1f1d2b;
 
   /* border-top-right-radius: 16px;
@@ -20,7 +21,8 @@ body {
   max-width: 104px !important;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical .ant-menu-item {
+:where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical .ant-menu-item,
+li.ant-menu-item {
   margin: 0 0 0 auto;
   color: #ea7c69;
   transition: 0.1s all linear;
@@ -36,7 +38,8 @@ body {
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-menu-light
-  .ant-menu-item-selected {
+  .ant-menu-item-selected,
+  :where(.css-1me4733).ant-menu-light .ant-menu-item-selected {
   color: #fff;
   background: #252836;
 }
@@ -47,7 +50,8 @@ body {
   border-inline-end: none;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-menu .ant-menu-item {
+:where(.css-dev-only-do-not-override-1me4733).ant-menu .ant-menu-item,
+:where(.css-1me4733).ant-menu-inline-collapsed >.ant-menu-item {
   border-radius: 12px 0px 0px 12px;
 }
 
@@ -62,7 +66,8 @@ body {
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-menu-vertical
-  > .ant-menu-item {
+  > .ant-menu-item,
+  :where(.css-1me4733).ant-menu-inline-collapsed >.ant-menu-item {
   height: auto;
 }
 
@@ -130,7 +135,8 @@ body {
   color: #fff !important;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-content {
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-content,
+:where(.css-1me4733).ant-drawer .ant-drawer-content {
   background: #1f1d2b;
 }
 
@@ -157,6 +163,7 @@ body {
   display: none;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-drawer-right>.ant-drawer-content-wrapper{
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer-right>.ant-drawer-content-wrapper,
+:where(.css-1me4733).ant-drawer-right>.ant-drawer-content-wrapper{
   width:500px !important
 }
