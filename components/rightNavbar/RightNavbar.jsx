@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
-import {IoWalletOutline} from 'react-icons/io'
+import {IoWalletOutline} from 'react-icons/io5'
 import { useDispatch, useSelector } from "react-redux";
+import { Drawer } from "antd";
 
 import i1 from "../../assets/card_i2.png";
-import styles from "./RightNavbar.module.css";
 import { DELETE_ORDER, GET_ORDER } from "../redux/actions/types";
 import { getAction } from "../redux/actions/readAction";
 import { deleteAction } from "../redux/actions/deleteAction";
-import { Drawer } from "antd";
+
+import styles from "./RightNavbar.module.css";
 
 const RightNavbar = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -101,9 +102,9 @@ const RightNavbar = () => {
             <h1>Payment</h1>
             <p>{data.length} payment method available</p>
             <h2>Payment Method</h2>
-            <div>
-              <div>
-                {/* <IoWalletOutline /> */}
+            <div className={styles.carts}>
+              <div className={styles.carts__box}>
+                <IoWalletOutline />
               </div>
             </div>
           </Drawer>

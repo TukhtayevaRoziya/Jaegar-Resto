@@ -152,3 +152,7 @@ body {
 
   color: #ffffff;
 }
+
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-header{
+  display: none;
+}
