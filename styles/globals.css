@@ -156,3 +156,7 @@ body {
 :where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-header{
   display: none;
 }
+
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer-right>.ant-drawer-content-wrapper{
+  width:500px !important
+}

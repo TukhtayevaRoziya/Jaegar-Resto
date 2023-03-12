@@ -226,8 +226,8 @@
   font-size: 16px;
   line-height: 140%;
   color: #abbbc2;
-  border-bottom: 1px solid #393C49;
-  padding-bottom: 1rem
+  border-bottom: 1px solid #393c49;
+  padding-bottom: 1rem;
 }
 
 .drawer h2 {
@@ -238,8 +238,104 @@
   line-height: 140%;
   color: #ffffff;
 }
-.carts,
-.carts{
+.carts {
   display: flex;
+  justify-content: space-between;
+}
 
+.carts__box {
+  background: #252836;
+  width: 22%;
+  border: 1px solid #abbbc2;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.carts__box svg {
+  font-size: 20px;
+  color: #fff;
+}
+
+.carts__box h1 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: #ffffff;
+  margin: 7px 0 0 0;
+}
+
+.inp h1 {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.inp {
+  border-bottom: 1px solid #393c49;
+  padding-bottom: 1rem;
+}
+
+.inp input {
+  background: #2d303e;
+
+  border: 1px solid #393c49;
+  border-radius: 8px;
+  padding: 14px;
+  width: 90%;
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #e0e6e9;
+  outline: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.btn button {
+  padding: 10px 0;
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
+  border-radius: 8px;
+  width: 48%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  outline:none;
+  cursor:pointer
+}
+
+.btn button:first-child {
+  color: #ea7c69;
+  border: 1px solid #ea7c69;
+  background: transparent !important;
+}
+.btn button:last-child {
+  background: #ea7c69;
+
+  box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+  border:none;
+  color: #FAFAFA;
 }
