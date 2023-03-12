@@ -1,33 +1,45 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
+import {IoWalletOutline} from 'react-icons/io'
 import { useDispatch, useSelector } from "react-redux";
 
 import i1 from "../../assets/card_i2.png";
 import styles from "./RightNavbar.module.css";
 import { DELETE_ORDER, GET_ORDER } from "../redux/actions/types";
-import {getAction} from '../redux/actions/readAction'
+import { getAction } from "../redux/actions/readAction";
 import { deleteAction } from "../redux/actions/deleteAction";
+import { Drawer } from "antd";
 
 const RightNavbar = () => {
+  const [totalPrice, setTotalPrice] = useState(0);
   const { data } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
-  
+  const [open, setOpen] = useState(false);
+
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
   useEffect(() => {
-    dispatch(getAction('/', GET_ORDER))
+    dispatch(getAction("/", GET_ORDER));
   }, [dispatch]);
   if (!data) {
     return <>No Order...</>;
   }
+
   var dataMap = data.map((d) => {
     let totalPrice = Number(d.price) * d.count;
     totalPrice = Math.round(100 * totalPrice) / 100;
     let count = d.count;
 
-    const onClick = ()=>{
-      dispatch(deleteAction('/', DELETE_ORDER, d.id))
-      dispatch(getAction('/', GET_ORDER))
-    }
+    const onClick = () => {
+      dispatch(deleteAction("/", DELETE_ORDER, d.id));
+      dispatch(getAction("/", GET_ORDER));
+    };
 
     return (
       <div className={styles.box} key={d.id}>
@@ -39,7 +51,11 @@ const RightNavbar = () => {
               <p>$ {d.price} </p>
             </div>
           </div>
-          <input className={styles.count} value={count} onChange={(e)=> count = e.target.value}/>
+          <input
+            className={styles.count}
+            value={count}
+            onChange={(e) => (count = e.target.value)}
+          />
           <span>$ {totalPrice}</span>
         </div>
         <div className={styles.extra}>
@@ -51,6 +67,11 @@ const RightNavbar = () => {
       </div>
     );
   });
+  if (data.length != 0) {
+    let total = data.reduce((t, item) => t + item.count * item.price);
+    // setTotalPrice(total)
+    console.log(total);
+  }
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>Orders #34562</h1>
@@ -66,66 +87,6 @@ const RightNavbar = () => {
       </div>
       <main className={styles.main}>
         {dataMap}
-        {/* <div className={styles.box}>
-          
-        <div className={styles.block}>
-          <div className={styles.main_info}>
-            <Image alt='' src={i1}/>
-            <div>
-              <h1>Spicy seasoned sea...</h1>
-              <p>$ 2.29 </p>
-              </div>
-          </div>
-            <input className={styles.count} />
-            <span>$ 4,58</span>
-        </div>
-        <div className={styles.extra}>
-          <input placeholder='Order Note...' />
-          <div className={styles.delete}>
-            <AiOutlineDelete />
-          </div>
-        </div>
-        </div>
-        <div className={styles.box}>
-          
-        <div className={styles.block}>
-          <div className={styles.main_info}>
-            <Image alt='' src={i1}/>
-            <div>
-              <h1>Spicy seasoned sea...</h1>
-              <p>$ 2.29 </p>
-              </div>
-          </div>
-            <input className={styles.count} />
-            <span>$ 4,58</span>
-        </div>
-        <div className={styles.extra}>
-          <input placeholder='Order Note...' />
-          <div className={styles.delete}>
-            <AiOutlineDelete />
-          </div>
-        </div>
-        </div>
-        <div className={styles.box}>
-          
-        <div className={styles.block}>
-          <div className={styles.main_info}>
-            <Image alt='' src={i1}/>
-            <div>
-              <h1>Spicy seasoned sea...</h1>
-              <p>$ 2.29 </p>
-              </div>
-          </div>
-            <input className={styles.count} />
-            <span>$ 4,58</span>
-        </div>
-        <div className={styles.extra}>
-          <input placeholder='Order Note...' />
-          <div className={styles.delete}>
-            <AiOutlineDelete />
-          </div>
-        </div>
-        </div> */}
         <div className={styles.payment}>
           <div>
             <h1>Discount</h1>
@@ -133,8 +94,19 @@ const RightNavbar = () => {
           </div>
           <div>
             <h1>Sub total</h1>
-            <h2> $ 21,03</h2>
+            <h2> $ {totalPrice}</h2>
           </div>
+          <button onClick={showDrawer}>Continue to Payment</button>
+          <Drawer title="" placement="right" onClose={onClose} open={open} className={styles.drawer}>
+            <h1>Payment</h1>
+            <p>{data.length} payment method available</p>
+            <h2>Payment Method</h2>
+            <div>
+              <div>
+                {/* <IoWalletOutline /> */}
+              </div>
+            </div>
+          </Drawer>
         </div>
       </main>
     </div>

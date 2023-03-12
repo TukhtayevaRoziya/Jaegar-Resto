@@ -115,25 +115,40 @@ body {
   background-color: #5b708b;
 }
 
-.ant-tabs-nav-list{
-  border-bottom: 1px solid #393C49;
+.ant-tabs-nav-list {
+  border-bottom: 1px solid #393c49;
 }
 
-.ant-select-selector{
+.ant-select-selector {
   background-color: transparent !important;
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-select,
 .ant-select-selector,
 .ant-select,
-.ant-select-arrow{
+.ant-select-arrow {
   color: #fff !important;
-
 }
 
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-content {
+  background: #1f1d2b;
+}
 
-:where(.css-dev-only-do-not-override-1me4733).ant-select:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover .ant-select-selector{
-  background: #1F1D2B;
-border: 1px solid #393C49;
-border-radius: 8px;
+:where(.css-dev-only-do-not-override-1me4733).ant-select:not(
+    .ant-select-disabled
+  ):not(.ant-select-customize-input):not(.ant-pagination-size-changer):hover
+  .ant-select-selector {
+  background: #1f1d2b;
+  border: 1px solid #393c49;
+  border-radius: 8px;
+}
+
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-title {
+  font-family: "Barlow", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+
+  color: #ffffff;
 }
