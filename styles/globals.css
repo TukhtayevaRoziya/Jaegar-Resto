@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Barlow", sans-serif;
+  background-color: #252836;
 }
 
 :where(.css-dev-only-do-not-override-1me4733).ant-layout .ant-layout-sider,
