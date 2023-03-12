@@ -69,8 +69,9 @@ const RightNavbar = () => {
     );
   });
   if (data.length != 0) {
-    let total = data.reduce((t, item) => t + item.count * item.price);
+    let total = data.reduce((t, item) => {t + item.count * item.price},0);
     // setTotalPrice(total)
+    // arr.reduce(function (acc, obj) { return acc + obj.x; })
     console.log(total);
   }
   return (
