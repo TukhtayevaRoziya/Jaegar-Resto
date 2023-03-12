@@ -5,7 +5,6 @@ import { IoWalletOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Drawer, Select } from "antd";
 
-import i1 from "../../assets/card_i2.png";
 import { DELETE_ORDER, GET_ORDER } from "../redux/actions/types";
 import { getAction } from "../redux/actions/readAction";
 import { deleteAction } from "../redux/actions/deleteAction";
@@ -28,7 +27,7 @@ const RightNavbar = () => {
   useEffect(() => {
     dispatch(getAction("/", GET_ORDER));
   }, [dispatch]);
-  
+
   if (!data) {
     return <>No Order...</>;
   }
