@@ -29,7 +29,7 @@ const Card = ({data1, data2, data3}) => {
       <h3>{d.available} available</h3>
     </div>
   )});
-  
+
   const handleChange = (value) => {
     const convertNum = Number(value);
     if (convertNum === 1) {
@@ -46,7 +46,7 @@ const Card = ({data1, data2, data3}) => {
       <div className={styles.card_header}>
         <h1>Choose Dishes</h1>
         <Select
-          defaultValue="lucy"
+          defaultValue="Dine In"
           style={{ width: 120 }}
           onChange={handleChange}
           options={[

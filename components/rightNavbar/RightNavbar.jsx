@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AiOutlineDelete } from "react-icons/ai";
-import { IoWalletOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { Drawer, Select } from "antd";
 
 import { DELETE_ORDER, GET_ORDER } from "../redux/actions/types";
 import { getAction } from "../redux/actions/readAction";
@@ -11,7 +9,6 @@ import { deleteAction } from "../redux/actions/deleteAction";
 
 import styles from "./RightNavbar.module.css";
 import MyDrawer from "./MyDrawer";
-
 
 const RightNavbar = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -64,7 +61,6 @@ const RightNavbar = () => {
     );
   });
 
-
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>Orders #34562</h1>
@@ -89,8 +85,8 @@ const RightNavbar = () => {
             <h1>Sub total</h1>
             <h2> $ {totalPrice}</h2>
           </div>
-          <button onClick={()=>setOpen(true)}>Continue to Payment</button>
-          <MyDrawer open={open} setOpen={setOpen} data={data }/>
+          <button onClick={() => setOpen(true)}>Continue to Payment</button>
+          <MyDrawer open={open} setOpen={setOpen} data={data} />
         </div>
       </main>
     </div>
