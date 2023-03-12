@@ -10,13 +10,8 @@ import { getAction } from "../redux/actions/readAction";
 import { deleteAction } from "../redux/actions/deleteAction";
 
 import styles from "./RightNavbar.module.css";
+import MyDrawer from "./MyDrawer";
 
-const Inp = ({ title, placeholder, type = "text", className }) => (
-  <div className={className}>
-    <h1>{title}</h1>
-    <input placeholder={placeholder} type={type} />
-  </div>
-);
 
 const RightNavbar = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -95,53 +90,7 @@ const RightNavbar = () => {
             <h2> $ {totalPrice}</h2>
           </div>
           <button onClick={()=>setOpen(true)}>Continue to Payment</button>
-          <Drawer
-            title=""
-            placement="right"
-            onClose={()=>setOpen(false)}
-            open={open}
-            className={styles.drawer}
-          >
-            <h1>Payment</h1>
-            <p>{data.length} payment method available</p>
-            <h2>Payment Method</h2>
-            <div className={styles.carts}>
-              <div className={styles.carts__box}>
-                <IoWalletOutline />
-                <h1>Credit Card</h1>
-              </div>
-              <div className={styles.carts__box}>
-                <IoWalletOutline />
-                <h1>Paypal</h1>
-              </div>
-              <div className={styles.carts__box}>
-                <IoWalletOutline />
-                <h1>Cash</h1>
-              </div>
-            </div>
-            <div className={styles.inp}>
-              <Inp title={"Cardholder Name"} placeholder={"Levi Ackerman"} />
-              <Inp
-                title={"Card Number"}
-                placeholder={"2564 1421 0897 1244"}
-                type={"number"}
-              />
-              <div className={styles.two_inp}>
-                <Inp title={"Expiration Date"} type={"date"} />
-                <Inp title={"CVV"} type={"password"} />
-              </div>
-            </div>
-            <Inp
-              title={"Table no."}
-              placeholder="140"
-              type={"number"}
-              className={styles.inp}
-            />
-            <div className={styles.btn}>
-              <button onClick={()=>setOpen(false)}>Cancel</button>
-              <button onClick={()=>setOpen(false)}>Confirm Payment</button>
-            </div>
-          </Drawer>
+          <MyDrawer open={open} setOpen={setOpen} data={data }/>
         </div>
       </main>
     </div>
