@@ -12,22 +12,23 @@ import { deleteAction } from "../redux/actions/deleteAction";
 
 import styles from "./RightNavbar.module.css";
 
+const Inp = ({ title, placeholder, type = "text", className }) => (
+  <div className={className}>
+    <h1>{title}</h1>
+    <input placeholder={placeholder} type={type} />
+  </div>
+);
+
 const RightNavbar = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const { data } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
-  const onClose = () => {
-    setOpen(false);
-  };
   useEffect(() => {
     dispatch(getAction("/", GET_ORDER));
   }, [dispatch]);
+  
   if (!data) {
     return <>No Order...</>;
   }
@@ -68,12 +69,8 @@ const RightNavbar = () => {
       </div>
     );
   });
-  if (data.length != 0) {
-    let total = data.reduce((t, item) => {t + item.count * item.price},0);
-    // setTotalPrice(total)
-    // arr.reduce(function (acc, obj) { return acc + obj.x; })
-    console.log(total);
-  }
+
+
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>Orders #34562</h1>
@@ -98,11 +95,11 @@ const RightNavbar = () => {
             <h1>Sub total</h1>
             <h2> $ {totalPrice}</h2>
           </div>
-          <button onClick={showDrawer}>Continue to Payment</button>
+          <button onClick={()=>setOpen(true)}>Continue to Payment</button>
           <Drawer
             title=""
             placement="right"
-            onClose={onClose}
+            onClose={()=>setOpen(false)}
             open={open}
             className={styles.drawer}
           >
@@ -124,35 +121,26 @@ const RightNavbar = () => {
               </div>
             </div>
             <div className={styles.inp}>
-              <div>
-                <h1>Cardholder Name</h1>
-                <input placeholder="Levi Ackerman" />
-              </div>
-              <div>
-                <h1>Card Number</h1>
-                <input placeholder="2564 1421 0897 1244" type={"number"} />
-              </div>
+              <Inp title={"Cardholder Name"} placeholder={"Levi Ackerman"} />
+              <Inp
+                title={"Card Number"}
+                placeholder={"2564 1421 0897 1244"}
+                type={"number"}
+              />
               <div className={styles.two_inp}>
-                <div>
-                  <h1>Expiration Date</h1>
-                  <input type={"date"} />
-                </div>
-                <div>
-                  <h1>CVV</h1>
-                  <input type={"date"} />
-                </div>
+                <Inp title={"Expiration Date"} type={"date"} />
+                <Inp title={"CVV"} type={"password"} />
               </div>
             </div>
-            <div
-              styles={{ borderBottom: "none !important" }}
+            <Inp
+              title={"Table no."}
+              placeholder="140"
+              type={"number"}
               className={styles.inp}
-            >
-              <h1>Table no.</h1>
-              <input placeholder="140" type={"number"} />
-            </div>
+            />
             <div className={styles.btn}>
-              <button onClick={onClose}>Cancel</button>
-              <button onClick={onClose}>Confirm Payment</button>
+              <button onClick={()=>setOpen(false)}>Cancel</button>
+              <button onClick={()=>setOpen(false)}>Confirm Payment</button>
             </div>
           </Drawer>
         </div>
