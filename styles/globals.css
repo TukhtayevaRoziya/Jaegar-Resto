@@ -57,7 +57,8 @@ li.ant-menu-item {
 
 :where(.css-dev-only-do-not-override-1me4733).ant-menu-light
   .ant-menu-item-selected
-  .ant-menu-item-icon {
+  .ant-menu-item-icon,
+  :where(.css-1me4733).ant-menu-light .ant-menu-item-selected .ant-menu-item-icon {
   padding: 15px;
   margin: 10px 0 10px -15px;
   background: #ea7c69;
@@ -159,7 +160,8 @@ li.ant-menu-item {
   color: #ffffff;
 }
 
-:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-header{
+:where(.css-dev-only-do-not-override-1me4733).ant-drawer .ant-drawer-header,
+:where(.css-1me4733).ant-drawer .ant-drawer-header{
   display: none;
 }
 
