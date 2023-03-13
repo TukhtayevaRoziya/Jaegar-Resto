@@ -19,27 +19,27 @@ const items = [
   {
     key: "2",
     label: `Cold Dishes`,
-    children: `Content of Tab Pane 2`,
+    children: <Card data1={data1} data2={data1} data3={data3} />,
   },
   {
     key: "3",
     label: `Soup`,
-    children: `Content of Tab Pane 3`,
+    children: <Card data1={data2} data2={data3} data3={data1} />,
   },
   {
     key: "4",
     label: `Grill`,
-    children: `Content of Tab Pane 3`,
+    children: <Card data1={data3} data2={data2} data3={data1} />,
   },
   {
     key: "5",
     label: `Appetizer`,
-    children: `Content of Tab Pane 3`,
+    children: <Card data1={data1} data2={data2} data3={data3} />,
   },
   {
     key: "6",
     label: `Dessert`,
-    children: `Content of Tab Pane 3`,
+    children: <Card data1={data2} data2={data3} data3={data1} />,
   },
 ];
 
